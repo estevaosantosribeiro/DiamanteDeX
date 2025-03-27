@@ -1,5 +1,7 @@
 # Diamante de X
 
+![](https://imgur.com/cb8SMqe)
+
 ## Sobre o projeto
 
 O **Diamante de X** é um programa simples que desenha um diamante utilizando a letra "X" na tela. O jogador pode escolher o tamanho central do diamante, e o programa irá desenhá-lo de acordo com o valor inserido, dividindo-o em três partes: a parte superior, o meio e a parte inferior.
