@@ -8,10 +8,7 @@
 
             int quantidadeX = 1;
 
-            Console.WriteLine("---------------------------------------");
-            Console.WriteLine("Bem-vindo a mina de diamante X :D");
-            Console.WriteLine("---------------------------------------");
-            Console.WriteLine("Para começar digite o tamanho central do diamante!");
+            mostrarCabecalho();
             Console.Write("Tamanho: ");
             tamanhoDiamante = Convert.ToInt32(Console.ReadLine());
 
@@ -25,7 +22,24 @@
             quantidadeLinhas = (tamanhoDiamante - 1) / 2;
             quantidadeEspacos = quantidadeLinhas;
 
-            // Parte de cima do diamante
+            desenharParteDeCima(quantidadeLinhas, quantidadeEspacos, quantidadeX);
+            desenharParteDoMeio(tamanhoDiamante);
+            quantidadeX = tamanhoDiamante;
+            desenharParteDeBaixo(quantidadeLinhas, quantidadeEspacos, quantidadeX);
+
+            Console.ReadLine();
+        }
+
+        static void mostrarCabecalho()
+        {
+            Console.WriteLine("---------------------------------------");
+            Console.WriteLine("Bem-vindo a mina de diamante X :D");
+            Console.WriteLine("---------------------------------------");
+            Console.WriteLine("Para começar digite o tamanho central do diamante!");
+        }
+
+        static void desenharParteDeCima(int quantidadeLinhas, int quantidadeEspacos, int quantidadeX)
+        {
             for (int i = 0; i < quantidadeLinhas; i++)
             {
                 for (int j = 0; j < quantidadeEspacos; j++)
@@ -40,19 +54,23 @@
                 quantidadeEspacos--;
                 quantidadeX += 2;
             }
+        }
 
-            // Parte do meio do diamante
+        static void desenharParteDoMeio(int tamanhoDiamante)
+        {
             for (int i = 0; i < tamanhoDiamante; i++)
             {
                 Console.Write("X");
             }
             Console.WriteLine();
+        }
 
-            // Parte de baixo do diamante
+        static void desenharParteDeBaixo(int quantidadeLinhas, int quantidadeEspacos, int quantidadeX)
+        {
+            quantidadeX -= 2;
+            quantidadeEspacos = 1;
             for (int i = 0; i < quantidadeLinhas; i++)
             {
-                quantidadeEspacos++;
-                quantidadeX -= 2;
                 for (int j = 0; j < quantidadeEspacos; j++)
                 {
                     Console.Write(" ");
@@ -61,10 +79,11 @@
                 {
                     Console.Write("X");
                 }
+
+                quantidadeX -= 2;
+                quantidadeEspacos++;
                 Console.WriteLine();
             }
-
-            Console.ReadLine();
         }
 
         static bool ValidarEntrada(int tamanhoDiamante)
