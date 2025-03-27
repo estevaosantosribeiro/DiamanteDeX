@@ -1,6 +1,6 @@
 # Diamante de X
 
-![](https://imgur.com/cb8SMqe)
+![](https://imgur.com/cb8SMqe.gif)
 
 ## Sobre o projeto
 
